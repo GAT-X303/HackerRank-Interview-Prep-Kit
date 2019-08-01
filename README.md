@@ -1,3 +1,5 @@
 # Introduction
 
-This repository is a way for me to keep my solutions for Hacker Rank programming questions in the "Interview Preparation Kit" section. I will attempt to do the entire section in multiple languages I'm comfortable in which is C, C++, Python and Java.
+This repository is a way for me to keep my solutions for various programming question that typically show up interview questions. I will also keep some algorithms I implement here for the sake of future reference.
+
+Anyone is welcome to download or use these.
