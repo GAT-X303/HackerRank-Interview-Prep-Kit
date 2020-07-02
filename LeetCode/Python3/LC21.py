@@ -1,43 +1,43 @@
 """
 LeetCode Problem - 21
+Allan Hieng
 """
-import random
 
-class Node:
-    def __init__(self, data, next):
-        self.data = data
+class ListNode:
+    def __init__(self, val=0, next = None):
+        self.val = val
         self.next = next
 
-class LinkedList:
-    def __init__(self, head):
-        self.head = head        
-
 def mergeTwoLists(l1, l2):
-    l3 = LinkedList
+    print("Merging Lists!")
 
-def createdRandomLinkedList(size):
-    unsortedLinkedList = LinkedList(None)
+    l3 = ListNode(None, None)
+    l3Ptr = l3
 
-    unsortedLinkedList.head = Node(random.randint(0,9), None)
-    currentNode = unsortedLinkedList.head
+    while l1.next is not None or l2.next is not None:
+        if l1.val == l2.val:
+            l3Ptr.val = l1.val
+            l1 = l1.next
 
-    for i in range(size-1):
-        currentNode.next = Node(random.randint(0,9), None)
-        currentNode = currentNode.next
+            l3Ptr.next = ListNode(None, None)
+            l3Ptr = l3Ptr.next
 
-    return unsortedLinkedList
+            l3Ptr.val = l2.val
+            l2 = l2.next
+        elif l1.val < l2.val:
+            l3Ptr.val = l1.val
+            l1 = l1.next
+        elif l1.val > l2.val:
+            l3Ptr.val = l2.val
+            l2 = l2.next
+
+        l3Ptr.next = ListNode(None, None)
+        l3Ptr = l3Ptr.next
+
+    return(l3)
 
 def printLinkedList(linkedList):
-    currentNode = linkedList
-
-    output = []
-
-    output.append(currentNode.head.data)
-
-    currentNode = currentNode.head.next
-
-    while currentNode.next!= None:
-        output.append(currentNode.data)
-        currentNode = currentNode.next
-    
-    print(output)
+    print("Printing linked list...")
+    while linkedList.next is not None:
+        print(linkedList.val)
+        linkedList = linkedList.next
